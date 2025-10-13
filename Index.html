@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excellence Engine</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #000;
+            color: #fff;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            font-size: 72px;
+            color: #ffd700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .header p {
+            font-size: 32px;
+            color: #aaa;
+        }
+
+        .tiles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .tile {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border: 4px solid #444;
+            border-radius: 20px;
+            padding: 50px 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 280px;
+        }
+
+        .tile:hover {
+            transform: translateY(-10px);
+            border-color: #ffd700;
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3);
+        }
+
+        .tile-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .tile-title {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #ffd700;
+        }
+
+        .tile-description {
+            font-size: 24px;
+            color: #bbb;
+            line-height: 1.4;
+        }
+
+        /* Unique colors for each tile */
+        .tile:nth-child(1) { border-color: #ff6b6b; }
+        .tile:nth-child(1):hover { border-color: #ff6b6b; box-shadow: 0 10px 40px rgba(255, 107, 107, 0.3); }
+        .tile:nth-child(1) .tile-title { color: #ff6b6b; }
+
+        .tile:nth-child(2) { border-color: #4ecdc4; }
+        .tile:nth-child(2):hover { border-color: #4ecdc4; box-shadow: 0 10px 40px rgba(78, 205, 196, 0.3); }
+        .tile:nth-child(2) .tile-title { color: #4ecdc4; }
+
+        .tile:nth-child(3) { border-color: #95e1d3; }
+        .tile:nth-child(3):hover { border-color: #95e1d3; box-shadow: 0 10px 40px rgba(149, 225, 211, 0.3); }
+        .tile:nth-child(3) .tile-title { color: #95e1d3; }
+
+        .tile:nth-child(4) { border-color: #f38181; }
+        .tile:nth-child(4):hover { border-color: #f38181; box-shadow: 0 10px 40px rgba(243, 129, 129, 0.3); }
+        .tile:nth-child(4) .tile-title { color: #f38181; }
+
+        .tile:nth-child(5) { border-color: #aa96da; }
+        .tile:nth-child(5):hover { border-color: #aa96da; box-shadow: 0 10px 40px rgba(170, 150, 218, 0.3); }
+        .tile:nth-child(5) .tile-title { color: #aa96da; }
+
+        .tile:nth-child(6) { border-color: #fcbad3; }
+        .tile:nth-child(6):hover { border-color: #fcbad3; box-shadow: 0 10px 40px rgba(252, 186, 211, 0.3); }
+        .tile:nth-child(6) .tile-title { color: #fcbad3; }
+
+        .tile:nth-child(7) { border-color: #ffd700; }
+        .tile:nth-child(7):hover { border-color: #ffd700; box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3); }
+        .tile:nth-child(7) .tile-title { color: #ffd700; }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 48px;
+            }
+
+            .header p {
+                font-size: 24px;
+            }
+
+            .tiles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tile-title {
+                font-size: 32px;
+            }
+
+            .tile-description {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Excellence Engine</h1>
+            <p>Boost Your Learning Journey</p>
+        </div>
+
+        <div class="tiles-grid">
+            <a href="#" class="tile" onclick="alert('Link to Recent Notifications page'); return false;">
+                <div class="tile-icon">🔔</div>
+                <div class="tile-title">Recent Notifications</div>
+                <div class="tile-description">Stay updated with latest announcements</div>
+            </a>
+
+            <a href="#" class="tile" onclick="alert('Link to Sight Words page'); return false;">
+                <div class="tile-icon">👁️</div>
+                <div class="tile-title">Sight Words</div>
+                <div class="tile-description">Master high-frequency words</div>
+            </a>
+
+            <a href="#" class="tile" onclick="alert('Link to Word of the Day page'); return false;">
+                <div class="tile-icon">📖</div>
+                <div class="tile-title">Word of the Day</div>
+                <div class="tile-description">Expand your vocabulary daily</div>
+            </a>
+
+            <a href="#" class="tile" onclick="alert('Link to Idioms page'); return false;">
+                <div class="tile-icon">💬</div>
+                <div class="tile-title">Idioms</div>
+                <div class="tile-description">Learn expressions and phrases</div>
+            </a>
+
+            <a href="#" class="tile" onclick="alert('Link to Situation page'); return false;">
+                <div class="tile-icon">🎭</div>
+                <div class="tile-title">Situation</div>
+                <div class="tile-description">Real-life scenarios and solutions</div>
+            </a>
+
+            <a href="#" class="tile" onclick="alert('Link to Mental Math page'); return false;">
+                <div class="tile-icon">🧮</div>
+                <div class="tile-title">Mental Math</div>
+                <div class="tile-description">Quick calculation challenges</div>
+            </a>
+
+            <a href="#" class="tile" onclick="alert('Link to Quiz page'); return false;">
+                <div class="tile-icon">🎯</div>
+                <div class="tile-title">Quiz</div>
+                <div class="tile-description">Test your knowledge</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
