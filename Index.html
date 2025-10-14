@@ -119,6 +119,10 @@
         .tile:nth-child(7):hover { border-color: #ffd700; box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3); }
         .tile:nth-child(7) .tile-title { color: #ffd700; }
 
+        .tile:nth-child(8) { border-color: #51cf66; }
+        .tile:nth-child(8):hover { border-color: #51cf66; box-shadow: 0 10px 40px rgba(81, 207, 102, 0.3); }
+        .tile:nth-child(8) .tile-title { color: #51cf66; }
+
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 48px;
@@ -191,7 +195,80 @@
                 <div class="tile-title">Quiz</div>
                 <div class="tile-description">Test your knowledge</div>
             </a>
+
+            <a href="#" class="tile" onclick="showDataCapture(); return false;">
+                <div class="tile-icon">📊</div>
+                <div class="tile-title">Teacher Data Capture Sheet</div>
+                <div class="tile-description">Google sheet links to enter the data</div>
+            </a>
         </div>
     </div>
+
+    <!-- Data Capture Page -->
+    <div id="dataCaptureSection" style="display: none;">
+        <div class="container">
+            <div class="header">
+                <h1>Teacher Data Capture Sheet</h1>
+                <p>Select an activity to enter data</p>
+                <button onclick="showMainDashboard()" style="background: #ffd700; color: #000; border: none; padding: 15px 30px; font-size: 20px; border-radius: 10px; cursor: pointer; margin-top: 20px;">← Back to Dashboard</button>
+            </div>
+
+            <div class="tiles-grid">
+                <a href="#" class="tile" onclick="alert('Link to Recent Notifications data entry sheet'); return false;">
+                    <div class="tile-icon">🔔</div>
+                    <div class="tile-title">Recent Notifications</div>
+                    <div class="tile-description">Click to enter the data</div>
+                </a>
+
+                <a href="#" class="tile" onclick="alert('Link to Sight Words data entry sheet'); return false;">
+                    <div class="tile-icon">👁️</div>
+                    <div class="tile-title">Sight Words</div>
+                    <div class="tile-description">Click to enter the data</div>
+                </a>
+
+                <a href="#" class="tile" onclick="alert('Link to Word of the Day data entry sheet'); return false;">
+                    <div class="tile-icon">📖</div>
+                    <div class="tile-title">Word of the Day</div>
+                    <div class="tile-description">Click to enter the data</div>
+                </a>
+
+                <a href="#" class="tile" onclick="alert('Link to Idioms data entry sheet'); return false;">
+                    <div class="tile-icon">💬</div>
+                    <div class="tile-title">Idioms</div>
+                    <div class="tile-description">Click to enter the data</div>
+                </a>
+
+                <a href="#" class="tile" onclick="alert('Link to Situation data entry sheet'); return false;">
+                    <div class="tile-icon">🎭</div>
+                    <div class="tile-title">Situation</div>
+                    <div class="tile-description">Click to enter the data</div>
+                </a>
+
+                <a href="#" class="tile" onclick="alert('Link to Mental Math data entry sheet'); return false;">
+                    <div class="tile-icon">🧮</div>
+                    <div class="tile-title">Mental Math</div>
+                    <div class="tile-description">Click to enter the data</div>
+                </a>
+
+                <a href="#" class="tile" onclick="alert('Link to Quiz data entry sheet'); return false;">
+                    <div class="tile-icon">🎯</div>
+                    <div class="tile-title">Quiz</div>
+                    <div class="tile-description">Click to enter the data</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showDataCapture() {
+            document.querySelector('.container').style.display = 'none';
+            document.getElementById('dataCaptureSection').style.display = 'block';
+        }
+
+        function showMainDashboard() {
+            document.querySelector('.container').style.display = 'block';
+            document.getElementById('dataCaptureSection').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
