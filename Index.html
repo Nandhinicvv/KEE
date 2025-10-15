@@ -27,6 +27,82 @@
         .header {
             text-align: center;
             margin-bottom: 60px;
+            position: relative;
+        }
+
+        .developer-dropdown {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .dropdown-btn {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border: 3px solid #ffd700;
+            color: #ffd700;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-btn:hover {
+            background: #ffd700;
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background: #1a1a1a;
+            border: 3px solid #ffd700;
+            border-radius: 10px;
+            min-width: 300px;
+            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.3);
+            z-index: 1000;
+            margin-top: 10px;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .dropdown-content.show {
+            display: block;
+        }
+
+        .developer-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #333;
+            transition: background 0.3s ease;
+        }
+
+        .developer-item:last-child {
+            border-bottom: none;
+        }
+
+        .developer-item:hover {
+            background: #2d2d2d;
+        }
+
+        .developer-photo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            border: 2px solid #ffd700;
+            object-fit: cover;
+            background: #444;
+        }
+
+        .developer-name {
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
         }
 
         .header h1 {
@@ -149,6 +225,31 @@
 <body>
     <div class="container">
         <div class="header">
+            <div class="developer-dropdown">
+                <button class="dropdown-btn" onclick="toggleDevelopers()">👨‍💻 Developers ▼</button>
+                <div id="developerDropdown" class="dropdown-content">
+                    <div class="developer-item">
+                        <img src="https://via.placeholder.com/50/ff6b6b/ffffff?text=JD" alt="John Doe" class="developer-photo">
+                        <span class="developer-name">John Doe</span>
+                    </div>
+                    <div class="developer-item">
+                        <img src="https://via.placeholder.com/50/4ecdc4/ffffff?text=JS" alt="Jane Smith" class="developer-photo">
+                        <span class="developer-name">Jane Smith</span>
+                    </div>
+                    <div class="developer-item">
+                        <img src="https://via.placeholder.com/50/95e1d3/ffffff?text=MJ" alt="Mike Johnson" class="developer-photo">
+                        <span class="developer-name">Mike Johnson</span>
+                    </div>
+                    <div class="developer-item">
+                        <img src="https://via.placeholder.com/50/f38181/ffffff?text=SK" alt="Sarah Kumar" class="developer-photo">
+                        <span class="developer-name">Sarah Kumar</span>
+                    </div>
+                    <div class="developer-item">
+                        <img src="https://via.placeholder.com/50/aa96da/ffffff?text=RL" alt="Raj Patel" class="developer-photo">
+                        <span class="developer-name">Raj Patel</span>
+                    </div>
+                </div>
+            </div>
             <h1>Excellence Engine</h1>
             <p>Boost Your Learning Journey</p>
         </div>
@@ -220,7 +321,7 @@
                     <div class="tile-description">Click to enter the data</div>
                 </a>
 
-                <a href="https://tinyurl.com/keesheets" class="tile" target="_blank">
+                <a href="#" class="tile" onclick="alert('Link to Sight Words data entry sheet'); return false;">
                     <div class="tile-icon">👁️</div>
                     <div class="tile-title">Sight Words</div>
                     <div class="tile-description">Click to enter the data</div>
@@ -250,7 +351,7 @@
                     <div class="tile-description">Click to enter the data</div>
                 </a>
 
-                <a href="https://docs.google.com/spreadsheets/d/19N9oqNfBzwGKdzt76eDXUB_Fd6LwjIe4AzSBW4sjV7Y/edit?usp=sharing" class="tile" target="_blank">
+                <a href="#" class="tile" onclick="alert('Link to Quiz data entry sheet'); return false;">
                     <div class="tile-icon">🎯</div>
                     <div class="tile-title">Quiz</div>
                     <div class="tile-description">Click to enter the data</div>
@@ -260,6 +361,20 @@
     </div>
 
     <script>
+        function toggleDevelopers() {
+            document.getElementById('developerDropdown').classList.toggle('show');
+        }
+
+        // Close dropdown when clicking outside
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdown-btn')) {
+                var dropdown = document.getElementById('developerDropdown');
+                if (dropdown.classList.contains('show')) {
+                    dropdown.classList.remove('show');
+                }
+            }
+        }
+
         function showDataCapture() {
             document.querySelector('.container').style.display = 'none';
             document.getElementById('dataCaptureSection').style.display = 'block';
