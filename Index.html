@@ -30,48 +30,62 @@
             position: relative;
         }
 
-        .developers-dropdown {
+        .header h1 {
+            font-size: 72px;
+            color: #ffd700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .header p {
+            font-size: 32px;
+            color: #aaa;
+        }
+
+        .developers-section {
             position: absolute;
             top: 0;
             right: 0;
         }
 
-        .dropdown-btn {
+        .developers-button {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 15px 25px;
-            font-size: 18px;
-            border: none;
-            border-radius: 12px;
+            border: 3px solid #667eea;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            color: #fff;
+            font-size: 28px;
             cursor: pointer;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
-            gap: 10px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            justify-content: center;
         }
 
-        .dropdown-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+        .developers-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
         }
 
-        .dropdown-content {
+        .developers-dropdown {
             display: none;
             position: absolute;
+            top: 70px;
             right: 0;
-            top: 60px;
             background: #1a1a1a;
-            min-width: 320px;
-            border-radius: 12px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-            border: 2px solid #667eea;
-            z-index: 1000;
+            border: 3px solid #667eea;
+            border-radius: 15px;
+            padding: 20px;
+            min-width: 350px;
             max-height: 500px;
             overflow-y: auto;
+            z-index: 1000;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
         }
 
-        .dropdown-content.show {
+        .developers-dropdown.active {
             display: block;
             animation: slideDown 0.3s ease;
         }
@@ -79,7 +93,7 @@
         @keyframes slideDown {
             from {
                 opacity: 0;
-                transform: translateY(-10px);
+                transform: translateY(-20px);
             }
             to {
                 opacity: 1;
@@ -88,20 +102,23 @@
         }
 
         .developer-item {
-            padding: 20px;
-            border-bottom: 1px solid #333;
             display: flex;
             align-items: center;
             gap: 15px;
-            transition: background 0.3s ease;
-        }
-
-        .developer-item:last-child {
-            border-bottom: none;
+            padding: 15px;
+            margin-bottom: 15px;
+            background: #2d2d2d;
+            border-radius: 10px;
+            transition: all 0.3s ease;
         }
 
         .developer-item:hover {
-            background: #2a2a2a;
+            background: #3d3d3d;
+            transform: translateX(5px);
+        }
+
+        .developer-item:last-child {
+            margin-bottom: 0;
         }
 
         .developer-photo {
@@ -117,27 +134,14 @@
         }
 
         .developer-name {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
-            color: #667eea;
+            color: #fff;
             margin-bottom: 5px;
         }
 
         .developer-role {
             font-size: 14px;
-            color: #aaa;
-        }
-
-        .header h1 {
-            font-size: 72px;
-            color: #ffd700;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 20px;
-        }
-
-        .header p {
-            font-size: 32px;
             color: #aaa;
         }
 
@@ -231,6 +235,17 @@
                 font-size: 24px;
             }
 
+            .developers-section {
+                position: static;
+                margin-top: 20px;
+            }
+
+            .developers-dropdown {
+                right: auto;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
             .tiles-grid {
                 grid-template-columns: 1fr;
             }
@@ -248,45 +263,44 @@
 <body>
     <div class="container">
         <div class="header">
-            <div class="developers-dropdown">
-                <button class="dropdown-btn" onclick="toggleDevelopers()">
-                    <span>👨‍💻</span>
-                    <span>Meet Our Developers</span>
-                    <span id="dropdownArrow">▼</span>
+            <h1>Excellence Engine</h1>
+            <p>Boost Your Learning Journey</p>
+            
+            <div class="developers-section">
+                <button class="developers-button" onclick="toggleDevelopers()">
+                    👨‍💻 Meet Our Developers
                 </button>
-                <div id="developersDropdown" class="dropdown-content">
+                <div class="developers-dropdown" id="developersDropdown">
                     <div class="developer-item">
-                        <img src="https://via.placeholder.com/60/667eea/ffffff?text=Dev1" alt="Developer 1" class="developer-photo">
+                        <img src="https://via.placeholder.com/60/667eea/ffffff?text=JS" alt="Developer 1" class="developer-photo">
                         <div class="developer-info">
                             <div class="developer-name">John Smith</div>
                             <div class="developer-role">Lead Developer</div>
                         </div>
                     </div>
                     <div class="developer-item">
-                        <img src="https://via.placeholder.com/60/764ba2/ffffff?text=Dev2" alt="Developer 2" class="developer-photo">
+                        <img src="https://via.placeholder.com/60/764ba2/ffffff?text=AS" alt="Developer 2" class="developer-photo">
                         <div class="developer-info">
-                            <div class="developer-name">Sarah Johnson</div>
-                            <div class="developer-role">UI/UX Designer</div>
+                            <div class="developer-name">Alice Johnson</div>
+                            <div class="developer-role">Frontend Developer</div>
                         </div>
                     </div>
                     <div class="developer-item">
-                        <img src="https://via.placeholder.com/60/f093fb/ffffff?text=Dev3" alt="Developer 3" class="developer-photo">
+                        <img src="https://via.placeholder.com/60/f093fb/ffffff?text=MB" alt="Developer 3" class="developer-photo">
                         <div class="developer-info">
-                            <div class="developer-name">Mike Chen</div>
+                            <div class="developer-name">Mike Brown</div>
                             <div class="developer-role">Backend Developer</div>
                         </div>
                     </div>
                     <div class="developer-item">
-                        <img src="https://via.placeholder.com/60/4facfe/ffffff?text=Dev4" alt="Developer 4" class="developer-photo">
+                        <img src="https://via.placeholder.com/60/4facfe/ffffff?text=SD" alt="Developer 4" class="developer-photo">
                         <div class="developer-info">
-                            <div class="developer-name">Emily Davis</div>
-                            <div class="developer-role">Frontend Developer</div>
+                            <div class="developer-name">Sarah Davis</div>
+                            <div class="developer-role">UI/UX Designer</div>
                         </div>
                     </div>
                 </div>
             </div>
-            <h1>Excellence Engine</h1>
-            <p>Boost Your Learning Journey</p>
         </div>
 
         <div class="tiles-grid">
@@ -398,22 +412,18 @@
     <script>
         function toggleDevelopers() {
             const dropdown = document.getElementById('developersDropdown');
-            const arrow = document.getElementById('dropdownArrow');
-            dropdown.classList.toggle('show');
-            arrow.textContent = dropdown.classList.contains('show') ? '▲' : '▼';
+            dropdown.classList.toggle('active');
         }
 
         // Close dropdown when clicking outside
-        window.onclick = function(event) {
-            if (!event.target.matches('.dropdown-btn') && !event.target.closest('.dropdown-btn')) {
-                const dropdown = document.getElementById('developersDropdown');
-                const arrow = document.getElementById('dropdownArrow');
-                if (dropdown.classList.contains('show')) {
-                    dropdown.classList.remove('show');
-                    arrow.textContent = '▼';
-                }
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('developersDropdown');
+            const button = document.querySelector('.developers-button');
+            
+            if (dropdown && button && !dropdown.contains(event.target) && !button.contains(event.target)) {
+                dropdown.classList.remove('active');
             }
-        }
+        });
 
         function showDataCapture() {
             document.querySelector('.container').style.display = 'none';
