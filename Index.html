@@ -30,54 +30,69 @@
             position: relative;
         }
 
-        .developer-dropdown {
+        .developers-dropdown {
             position: absolute;
             top: 0;
             right: 0;
         }
 
         .dropdown-btn {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            border: 3px solid #ffd700;
-            color: #ffd700;
-            padding: 12px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 25px;
             font-size: 18px;
-            border-radius: 10px;
+            border: none;
+            border-radius: 12px;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
         }
 
         .dropdown-btn:hover {
-            background: #ffd700;
-            color: #000;
             transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
         }
 
         .dropdown-content {
             display: none;
             position: absolute;
             right: 0;
+            top: 60px;
             background: #1a1a1a;
-            border: 3px solid #ffd700;
-            border-radius: 10px;
-            min-width: 300px;
-            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.3);
+            min-width: 320px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            border: 2px solid #667eea;
             z-index: 1000;
-            margin-top: 10px;
             max-height: 500px;
             overflow-y: auto;
         }
 
         .dropdown-content.show {
             display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .developer-item {
+            padding: 20px;
+            border-bottom: 1px solid #333;
             display: flex;
             align-items: center;
-            padding: 15px;
-            border-bottom: 1px solid #333;
+            gap: 15px;
             transition: background 0.3s ease;
         }
 
@@ -86,23 +101,31 @@
         }
 
         .developer-item:hover {
-            background: #2d2d2d;
+            background: #2a2a2a;
         }
 
         .developer-photo {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            margin-right: 15px;
-            border: 2px solid #ffd700;
             object-fit: cover;
-            background: #444;
+            border: 3px solid #667eea;
+        }
+
+        .developer-info {
+            flex: 1;
         }
 
         .developer-name {
-            color: #fff;
             font-size: 18px;
             font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .developer-role {
+            font-size: 14px;
+            color: #aaa;
         }
 
         .header h1 {
@@ -225,28 +248,40 @@
 <body>
     <div class="container">
         <div class="header">
-            <div class="developer-dropdown">
-                <button class="dropdown-btn" onclick="toggleDevelopers()">👨‍💻 Developers ▼</button>
-                <div id="developerDropdown" class="dropdown-content">
+            <div class="developers-dropdown">
+                <button class="dropdown-btn" onclick="toggleDevelopers()">
+                    <span>👨‍💻</span>
+                    <span>Meet Our Developers</span>
+                    <span id="dropdownArrow">▼</span>
+                </button>
+                <div id="developersDropdown" class="dropdown-content">
                     <div class="developer-item">
-                        <img src="https://via.placeholder.com/50/ff6b6b/ffffff?text=JD" alt="John Doe" class="developer-photo">
-                        <span class="developer-name">John Doe</span>
+                        <img src="https://via.placeholder.com/60/667eea/ffffff?text=Dev1" alt="Developer 1" class="developer-photo">
+                        <div class="developer-info">
+                            <div class="developer-name">John Smith</div>
+                            <div class="developer-role">Lead Developer</div>
+                        </div>
                     </div>
                     <div class="developer-item">
-                        <img src="https://via.placeholder.com/50/4ecdc4/ffffff?text=JS" alt="Jane Smith" class="developer-photo">
-                        <span class="developer-name">Jane Smith</span>
+                        <img src="https://via.placeholder.com/60/764ba2/ffffff?text=Dev2" alt="Developer 2" class="developer-photo">
+                        <div class="developer-info">
+                            <div class="developer-name">Sarah Johnson</div>
+                            <div class="developer-role">UI/UX Designer</div>
+                        </div>
                     </div>
                     <div class="developer-item">
-                        <img src="https://via.placeholder.com/50/95e1d3/ffffff?text=MJ" alt="Mike Johnson" class="developer-photo">
-                        <span class="developer-name">Mike Johnson</span>
+                        <img src="https://via.placeholder.com/60/f093fb/ffffff?text=Dev3" alt="Developer 3" class="developer-photo">
+                        <div class="developer-info">
+                            <div class="developer-name">Mike Chen</div>
+                            <div class="developer-role">Backend Developer</div>
+                        </div>
                     </div>
                     <div class="developer-item">
-                        <img src="https://via.placeholder.com/50/f38181/ffffff?text=SK" alt="Sarah Kumar" class="developer-photo">
-                        <span class="developer-name">Sarah Kumar</span>
-                    </div>
-                    <div class="developer-item">
-                        <img src="https://via.placeholder.com/50/aa96da/ffffff?text=RL" alt="Raj Patel" class="developer-photo">
-                        <span class="developer-name">Raj Patel</span>
+                        <img src="https://via.placeholder.com/60/4facfe/ffffff?text=Dev4" alt="Developer 4" class="developer-photo">
+                        <div class="developer-info">
+                            <div class="developer-name">Emily Davis</div>
+                            <div class="developer-role">Frontend Developer</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -362,15 +397,20 @@
 
     <script>
         function toggleDevelopers() {
-            document.getElementById('developerDropdown').classList.toggle('show');
+            const dropdown = document.getElementById('developersDropdown');
+            const arrow = document.getElementById('dropdownArrow');
+            dropdown.classList.toggle('show');
+            arrow.textContent = dropdown.classList.contains('show') ? '▲' : '▼';
         }
 
         // Close dropdown when clicking outside
         window.onclick = function(event) {
-            if (!event.target.matches('.dropdown-btn')) {
-                var dropdown = document.getElementById('developerDropdown');
+            if (!event.target.matches('.dropdown-btn') && !event.target.closest('.dropdown-btn')) {
+                const dropdown = document.getElementById('developersDropdown');
+                const arrow = document.getElementById('dropdownArrow');
                 if (dropdown.classList.contains('show')) {
                     dropdown.classList.remove('show');
+                    arrow.textContent = '▼';
                 }
             }
         }
