@@ -52,9 +52,8 @@
         .developers-button {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             border: 3px solid #667eea;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
+            border-radius: 30px;
+            padding: 10px 20px;
             color: #fff;
             font-size: 28px;
             cursor: pointer;
@@ -62,11 +61,29 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 10px;
+            width: 60px;
+            height: 60px;
+            overflow: hidden;
+            white-space: nowrap;
         }
 
         .developers-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+            width: auto;
+        }
+
+        .developer-label {
+            font-size: 18px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            max-width: 0;
+        }
+
+        .developers-button:hover .developer-label {
+            opacity: 1;
+            max-width: 200px;
         }
 
         .developers-dropdown {
@@ -268,7 +285,8 @@
             
             <div class="developers-section">
                 <button class="developers-button" onclick="toggleDevelopers()">
-                    👨‍💻 Meet Our Developers
+                    <span>👨‍💻</span>
+                    <span class="developer-label">Meet Our Developers</span>
                 </button>
                 <div class="developers-dropdown" id="developersDropdown">
                     <div class="developer-item">
@@ -370,7 +388,7 @@
                     <div class="tile-description">Click to enter the data</div>
                 </a>
 
-                <a href="https://docs.google.com/spreadsheets/d/1gi2UunxUPb5d7SAK69JhpViyASfNkA1ubG33zHbNVyk/edit?usp=sharing" class="tile" target="_blank">
+                <a href="#" class="tile" onclick="alert('Link to Sight Words data entry sheet'); return false;">
                     <div class="tile-icon">👁️</div>
                     <div class="tile-title">Sight Words</div>
                     <div class="tile-description">Click to enter the data</div>
