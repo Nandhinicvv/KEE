@@ -24,6 +24,42 @@
             margin: 0 auto;
         }
 
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding: 0 20px;
+        }
+
+        .school-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .school-logo, .founder-photo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .school-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffd700;
+            text-align: center;
+            max-width: 400px;
+        }
+
+        .computing-club-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
         .header {
             text-align: center;
             margin-bottom: 60px;
@@ -244,6 +280,20 @@
         .tile:nth-child(8) .tile-title { color: #51cf66; }
 
         @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .school-info {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .school-name {
+                font-size: 18px;
+            }
+
             .header h1 {
                 font-size: 48px;
             }
@@ -279,6 +329,16 @@
 </head>
 <body>
     <div class="container">
+        <!-- Top Bar with School Info and Computing Club Logo -->
+        <div class="top-bar">
+            <div class="school-info">
+                <img src="https://via.placeholder.com/80/ffd700/000000?text=LOGO" alt="School Logo" class="school-logo">
+                <div class="school-name">Chinmaya Vidyalaya Sr. Sec. School, Virugambakkam</div>
+                <img src="https://via.placeholder.com/80/ffd700/000000?text=FOUNDER" alt="Founder Photo" class="founder-photo">
+            </div>
+            <img src="https://via.placeholder.com/80/667eea/ffffff?text=CLUB" alt="Computing Club Logo" class="computing-club-logo">
+        </div>
+
         <div class="header">
             <h1>Excellence Engine</h1>
             <p>Boost Your Learning Journey</p>
@@ -412,7 +472,7 @@
                     <div class="tile-description">Click to enter the data</div>
                 </a>
 
-                <a href="#" class="tile" onclick="alert('Link to Situation data entry sheet'); return false;">
+                <a href="#" class="tile" onclick="alert('Link to Mental Math data entry sheet'); return false;">
                     <div class="tile-icon">🧮</div>
                     <div class="tile-title">Mental Math</div>
                     <div class="tile-description">Click to enter the data</div>
