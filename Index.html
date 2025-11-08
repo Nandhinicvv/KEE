@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -280,6 +279,10 @@
         .tile:nth-child(8):hover { border-color: #51cf66; box-shadow: 0 10px 40px rgba(81, 207, 102, 0.3); }
         .tile:nth-child(8) .tile-title { color: #51cf66; }
 
+        .tile:nth-child(9) { border-color: #ff922b; }
+        .tile:nth-child(9):hover { border-color: #ff922b; box-shadow: 0 10px 40px rgba(255, 146, 43, 0.3); }
+        .tile:nth-child(9) .tile-title { color: #ff922b; }
+
         @media (max-width: 768px) {
             .top-bar {
                 flex-direction: column;
@@ -432,6 +435,12 @@
                 <div class="tile-description">Test your knowledge</div>
             </a>
 
+            <a href="#" class="tile" onclick="alert('Link to Immersive Interactive Warmup'); return false;">
+                <div class="tile-icon">🎮</div>
+                <div class="tile-title">Immersive Interactive Warmup</div>
+                <div class="tile-description">Engaging warm-up activities</div>
+            </a>
+
             <a href="#" class="tile" onclick="showDataCapture(); return false;">
                 <div class="tile-icon">📊</div>
                 <div class="tile-title">Teacher Data Capture Sheet</div>
@@ -489,6 +498,12 @@
                 <a href="https://docs.google.com/spreadsheets/d/19N9oqNfBzwGKdzt76eDXUB_Fd6LwjIe4AzSBW4sjV7Y/edit?usp=sharing" class="tile" target="_blank">
                     <div class="tile-icon">🎯</div>
                     <div class="tile-title">Quiz</div>
+                    <div class="tile-description">Click to enter the data</div>
+                </a>
+
+                <a href="#" class="tile" onclick="alert('Link to Immersive Interactive Warmup data entry sheet'); return false;">
+                    <div class="tile-icon">🎮</div>
+                    <div class="tile-title">Immersive Interactive Warmup</div>
                     <div class="tile-description">Click to enter the data</div>
                 </a>
             </div>
